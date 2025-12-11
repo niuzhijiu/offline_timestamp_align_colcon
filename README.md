@@ -26,7 +26,7 @@ offline_timestamp_align_colcon
 ## 文件功能简介    
 CMakeLists.txt：声明编译规则
 package.xml：声明依赖和包的基本信息
-offline_timestamp_align_colcon.launch.py：一键启动ROS相关的发布和订阅节点
+offline_timestamp_align_colcon.launch.py：一键启动ROS相关的发布和融合节点
 FusedState.msg：定义融合后发布的消息
 cam_w_norm_calculate_colcon.cpp：计算三轴视觉角速度及模值
 imu_w_norm_calculate_colcon.cpp：计算IMU角速度模值
