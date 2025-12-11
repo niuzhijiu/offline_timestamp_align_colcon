@@ -117,9 +117,9 @@ int main() {
         0.0, 0.0, 1.0);
 
     //输入相机图像文件夹地址、时间戳地址、保存计算所的数据的地址
-    std::string folder = "/home/slam/20251205_test/cam0/";
-    std::string csv_path = "/home/slam/20251205_test/cam0_timestamp.csv";
-    std::string save_path = "/home/slam/20251208_test/visual_angular_velocity_mid_cpp.csv";
+    std::string folder = "/home/slam/20251210/cam0/";
+    std::string csv_path = "/home/slam/20251210/cam0_timestamp.csv";
+    std::string save_path = "/home/slam/20251211/visual_angular_velocity_mid_cpp.csv";
 
     //读取CSV数据并存储
     auto data = readCamCsvRobust(csv_path);

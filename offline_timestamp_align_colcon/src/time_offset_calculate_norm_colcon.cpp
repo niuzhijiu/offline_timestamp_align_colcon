@@ -168,8 +168,8 @@ double computeCorrelation(const std::vector<double>& imu_norms,
 
 int main() {
     //数据文件路径
-    std::string imu_csv_path = "/home/slam/20251205_test/imu0_data_w_norm.csv";
-    std::string vis_csv_path = "/home/slam/20251205_test/visual_angular_velocity_mid_cpp.csv";
+    std::string imu_csv_path = "/home/slam/20251211/imu0_data_w_norm.csv";
+    std::string vis_csv_path = "/home/slam/20251211/visual_angular_velocity_mid_cpp.csv";
 
     //读取IMU和视觉数据
     std::vector<ImuData> imu_data = readImuCsv(imu_csv_path);

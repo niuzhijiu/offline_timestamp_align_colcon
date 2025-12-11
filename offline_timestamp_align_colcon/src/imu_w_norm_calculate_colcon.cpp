@@ -91,8 +91,8 @@ void saveNormCsv(const std::string& filename, const std::vector<ImuData>& data) 
 
 int main() {
     //定义路径
-    std::string imu_csv = "/home/slam/20251205_test/imu0_data.csv";
-    std::string save_path = "/home/slam/20251208_test/imu0_data_w_norm.csv";
+    std::string imu_csv = "/home/slam/20251210/imu0_data.csv";
+    std::string save_path = "/home/slam/20251211/imu0_data_w_norm.csv";
 
     //读取IMU数据
     std::vector<ImuData> imu_data = readImuCsv(imu_csv);

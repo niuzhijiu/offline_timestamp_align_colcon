@@ -4,12 +4,11 @@
 #include <sensor_msgs/msg/imu.hpp>
 #include <cv_bridge/cv_bridge.h>
 #include <opencv2/opencv.hpp>
-
 #include <fstream>
 #include <sstream>
 #include <string>
 #include <vector>
-#include <algorithm>  // 用于std::remove
+#include <algorithm> 
 
 // 把相机和imu的csv文件映射成对应的结构体
 struct CamData {
@@ -135,9 +134,9 @@ class PublishNode : public rclcpp::Node {
 public:
     PublishNode() : Node("publish_node_colcon") {  
         // 声明并获取参数
-        this->declare_parameter<std::string>("cam_csv", "/home/slam/20251208_test/cam0_aligned.csv");
-        this->declare_parameter<std::string>("image_dir", "/home/slam/20251205_test/cam0/");
-        this->declare_parameter<std::string>("imu_csv", "/home/slam/20251205_test/imu0_data.csv");
+        this->declare_parameter<std::string>("cam_csv", "/home/slam/20251211/cam0_aligned.csv");
+        this->declare_parameter<std::string>("image_dir", "/home/slam/20251210/cam0/");
+        this->declare_parameter<std::string>("imu_csv", "/home/slam/20251210/imu0_data.csv");
 
         this->get_parameter("cam_csv", cam_csv_path_);
         this->get_parameter("image_dir", image_dir_);
@@ -159,7 +158,7 @@ public:
 
         // 创建定时器
         timer_ = this->create_wall_timer(
-            std::chrono::milliseconds(4),  // 约250Hz（1000/4≈250）
+            std::chrono::milliseconds(4),  // 4ms定时器，最大频率约250Hz（1000/4=250）
             std::bind(&PublishNode::publishData, this)
         );
 

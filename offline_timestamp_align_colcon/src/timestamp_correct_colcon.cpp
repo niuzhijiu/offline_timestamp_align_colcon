@@ -62,11 +62,11 @@ void saveAlignedCsv(const std::string& filename, const std::vector<CamData>& dat
 
 int main() {
     //偏移量b
-    double b = -0.007;  
+    double b = -0.008;  
 
     //输入输出文件路径
-    std::string cam_csv = "/home/slam/20251205_test/cam0_timestamp.csv";
-    std::string cam_aligned_csv = "/home/slam/20251208_test/cam0_aligned.csv";
+    std::string cam_csv = "/home/slam/20251210/cam0_timestamp.csv";
+    std::string cam_aligned_csv = "/home/slam/20251211/cam0_aligned.csv";
 
     //读取CSV
     auto data = readCamCsv(cam_csv);

@@ -146,8 +146,8 @@ double computeCorrelation(const std::vector<double>& imu_s,
 
 int main() {
     //定义路径
-    std::string imu_csv = "/home/slam/20251205_test/imu0_data.csv";
-    std::string vis_csv = "/home/slam/20251205_test/visual_angular_velocity_mid_cpp.csv";
+    std::string imu_csv = "/home/slam/20251210/imu0_data.csv";
+    std::string vis_csv = "/home/slam/20251211/visual_angular_velocity_mid_cpp.csv";
 
     //读取IMU和视觉数据并检查是否为空
     auto imu = readImuCsv(imu_csv);

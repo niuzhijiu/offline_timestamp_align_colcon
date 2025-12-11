@@ -4,7 +4,7 @@
   <name>offline_timestamp_align_colcon</name>
   <version>0.0.0</version>
   <description>ROS2 Foxy port of offline timestamp alignment tool, for publishing cam/IMU data and fusing timestamp-aligned cam-IMU messages</description>
-  <maintainer email="283275126@qq.com">slam</maintainer>
+  <maintainer email="283275126@qq.com">niuzhijiu</maintainer>
   <license>Apache-2.0</license>
 
   <!-- 编译工具依赖 -->

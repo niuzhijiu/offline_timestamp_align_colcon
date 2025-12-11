@@ -3,7 +3,6 @@
 #include <sensor_msgs/msg/imu.hpp>
 #include <geometry_msgs/msg/vector3.hpp>
 #include "offline_timestamp_align_colcon/msg/fused_state.hpp"
-
 #include <vector>
 #include <string>
 #include <csignal>
