@@ -1,3 +1,4 @@
+// 声明头文件和依赖
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/image.hpp>
 #include <sensor_msgs/msg/imu.hpp>
@@ -135,7 +136,7 @@ std::shared_ptr<FusionNode> g_node = nullptr;
 
 // Ctrl+C 信号处理函数
 void sigintHandler(int sig) {
-    (void)sig; // 消除未使用参数警告
+    (void)sig;                   // 消除未使用参数警告
     if (g_node) {
         g_node->shutdown();
     }

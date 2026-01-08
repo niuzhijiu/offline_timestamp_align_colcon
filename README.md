@@ -7,8 +7,6 @@
 ```
 offline_timestamp_align_colcon
     ├── CMakeLists.txt
-    ├── include
-    │   └── offline_timestamp_align_colcon
     ├── launch
     │   └── offline_timestamp_align_colcon.launch.py
     ├── msg

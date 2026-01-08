@@ -88,7 +88,7 @@ std::vector<CamData> loadCamCsv(const std::string& path) {
     return data;
 }
 
-// 读取IMU CSV文件
+// 读取IMU的CSV文件
 std::vector<ImuData> loadImuCsv(const std::string& path) {
     std::vector<ImuData> data;
     std::ifstream file(path);
@@ -134,9 +134,9 @@ class PublishNode : public rclcpp::Node {
 public:
     PublishNode() : Node("publish_node_colcon") {  
         // 声明并获取参数
-        this->declare_parameter<std::string>("cam_csv", "/home/slam/20251211/cam0_aligned.csv");
-        this->declare_parameter<std::string>("image_dir", "/home/slam/20251210/cam0/");
-        this->declare_parameter<std::string>("imu_csv", "/home/slam/20251210/imu0_data.csv");
+        this->declare_parameter<std::string>("cam_csv", "/home/cat/foxy_education_data/cam0_aligned.csv");
+        this->declare_parameter<std::string>("image_dir", "/home/cat/noetic_education_data/cam0/");
+        this->declare_parameter<std::string>("imu_csv", "/home/cat/noetic_education_data/imu0_data.csv");
 
         this->get_parameter("cam_csv", cam_csv_path_);
         this->get_parameter("image_dir", image_dir_);
@@ -158,7 +158,7 @@ public:
 
         // 创建定时器
         timer_ = this->create_wall_timer(
-            std::chrono::milliseconds(4),  // 4ms定时器，最大频率约250Hz（1000/4=250）
+            std::chrono::milliseconds(4),                              // 4ms定时器，最大频率约250Hz（1000/4=250）
             std::bind(&PublishNode::publishData, this)
         );
 
@@ -170,7 +170,7 @@ private:
     void publishData() {
         // 检查是否还有数据需要发布
         if ((i_ >= cam_data_.size() && j_ >= imu_data_.size()) || !rclcpp::ok()) {
-            timer_->cancel();  // 停止定时器
+            timer_->cancel();                                          // 停止定时器
             RCLCPP_INFO(this->get_logger(), "Data publish finished. Total cam: %zu, imu: %zu", 
                       cam_data_.size(), imu_data_.size());
             RCLCPP_INFO(this->get_logger(), "Waiting 2.0 s to let messages flush...");
